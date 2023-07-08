@@ -9,7 +9,7 @@ def chat(user_input):
     messages.append({"role": "user", "content": user_input})
     prompt = openai.ChatCompletion.create(
         model = 'gpt-3.5-turbo',
-        max_tokens=50,
+        max_tokens=20,
         messages=messages,
         n=1,
         frequency_penalty=0.3
