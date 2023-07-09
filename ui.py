@@ -47,13 +47,8 @@ with gr.Blocks() as demo:
                              width='512', 
                              label='image generated',
                              show_label=True)
-            
-    with gr.Accordion("Story so far"):
-        result = '\n'.join(story)
-        print('the story is: ', result)
-        gr.Markdown(result)
-        
+
     msg.submit(respond, [msg, chatbot], [msg, chatbot])
     image_button.click(query_image, inputs=[msg], outputs=image_output)
-
+    clear.click(lambda: None, None, chatbot, queue=False)
 demo.launch()   
