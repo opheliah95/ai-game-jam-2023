@@ -56,4 +56,4 @@ with gr.Blocks() as demo:
     msg.submit(respond, [msg, chatbot], [msg, chatbot])
     image_button.click(query_image, inputs=[msg], outputs=image_output)
 
-demo.launch()   
+demo.launch(share=True)   
